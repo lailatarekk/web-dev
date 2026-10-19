@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<body>
+<head>
+  <meta charset="UTF-8"> <!---emojis and special char-->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!---to fit each device screen-->
+  <title>Greetings!!!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+  <div class="card">
+    <h1 id="title">Welcome</h1>
+    <div class="row"> <!---so input and button on smae row-->
+      <input id="name" placeholder="Your name" />
+      <button id="greet">Greet</button>
+    </div>
+    <ul id="list"></ul>
+  </div>
+
+  <script src="script.js"></script>
+
+
+    <!--<p id='greeting'>Welcome</p>
+    <button id='sayHi'>Say Hi</button>-->
+  <!--<h1 id="title">Welcome</h1>
+<input id="name" placeholder="Your name" />
+<button id="greet">Greet</button>
+<ul id="list"></ul>  
+
+</body>
+<script>
+    function counter() { let c = 0; return () => ++c; }
+    const next = counter(); 
+    console.log(next()); //1
+    console.log(next()); //2  (kol ma t refresh -  repeat (12 12 12))
+
+    // Function to greet the user and add their name to the list
+function addName() {
+    const input = document.getElementById('name');
+    const name = input.value.trim();
+
+    if (!name) return; // ignore empty input
+
+    document.getElementById('title').textContent = `Hello, ${name}!`;
+
+    const li = document.createElement('li');
+    li.textContent = name;
+    document.getElementById('list').appendChild(li);
+
+    input.value = ''; // clear input box
+}
+
+// Function to say goodbye when a name is clicked
+function removeName(e) {
+    if (e.target.nodeName === 'LI') {
+        const name = e.target.textContent;
+        document.getElementById('title').textContent = `Goodbye, ${name}! see you later.`;
+        e.target.remove(); // remove the clicked <li>
+    }
+}
+
+// Attach event listeners
+document.getElementById('greet').addEventListener('click', addName);
+document.getElementById('list').addEventListener('click', removeName);
+
+ //const btn = document.getElementById('sayHi');
+//btn.addEventListener('click', () => {
+// document.getElementById('greeting').textContent = 'Hello from JS! and lailaaa';
+
+//});
+
+
+</script>-->
+
+
+

@@ -1,0 +1,123 @@
+:root {
+  --bg1: #ffe3f1;
+  --bg2: #e3f0ff;
+  --card: rgba(255, 255, 255, 0.85);
+  --text: #5b3a64;
+  --accent: #ff7eb6;
+  --accent-dark: #f0589c;
+  --chip: #fff0f7;
+  --chip-hover: #ffd6ea;
+  --border: #ffc2de;
+  --shadow: rgba(240, 88, 156, 0.25);
+}
+
+ 
+  :root {
+    --bg1: #2a1a33;
+    --bg2: #1a2238;
+    --card: rgba(48, 34, 62, 0.85);
+    --text: #f6dcf0;
+    --chip: #3d2a4c;
+    --chip-hover: #55386b;
+    --border: #6b4580;
+    --shadow: rgba(0, 0, 0, 0.4);
+  }
+
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  font-family: "Quicksand", "Nunito", "Segoe UI", system-ui, sans-serif;
+  color: var(--text);
+  background: linear-gradient(135deg, var(--bg1), var(--bg2));
+  background-attachment: fixed;
+}
+
+.card {
+  width: 100%;
+  max-width: 380px;
+  padding: 28px 24px;
+  background: var(--card);
+  border: 2px dashed var(--border);
+  border-radius: 28px;
+  box-shadow: 0 12px 32px var(--shadow);
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 20px;
+  font-size: 1.7rem;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+
+.row { display: flex; gap: 10px; }
+
+input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 16px;
+  font: inherit;
+  color: var(--text);
+  background: var(--chip);
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+input::placeholder { color: var(--text); opacity: .5; }
+input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--shadow);
+}
+
+button {
+  padding: 12px 20px;
+  font: inherit;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.12);
+  transition: transform .15s, box-shadow .15s;
+}
+button:hover  { transform: translateY(-2px) rotate(-2deg); }
+button:active { transform: translateY(2px); box-shadow: none; }
+
+ul {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+li {
+  padding: 10px 16px;
+  background: var(--chip);
+  border: 2px solid var(--border);
+  border-radius: 18px;
+  cursor: pointer;
+  text-align: left;
+  overflow-wrap: anywhere;
+  animation: pop .35s cubic-bezier(.34, 1.56, .64, 1);
+  transition: background .2s, transform .2s;
+}
+
+li:hover { background: var(--chip-hover); transform: scale(1.03); }
+li:hover::after { content: "  (click to say bye )"; font-size: .75rem; opacity: .6; }
+
+@keyframes pop {
+  from { opacity: 0; transform: scale(.6) translateY(10px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+} 
